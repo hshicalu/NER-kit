@@ -6,6 +6,7 @@ from pprint import pprint
 import gc
 import torch
 import torch.utils.data as D
+from pytorch_lightning import Trainer, seed_everything
 import warnings
 warnings.filterwarnings("ignore")
 from copy import deepcopy
@@ -43,7 +44,8 @@ def main():
             'loader_valid': valid_loader,
             ***
         }
-        model.fit(**PARAMS)
+        trainer = Trainer(model, device=***)
+        trainer.fit(**PARAMS)
 
         ''' inference '''
         ***
