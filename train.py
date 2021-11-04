@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 import torch
 import torch.utils.data as D
-from pytorch_lightning import Trainer, seed_everything
+from pytorch_lightning import Trainer
 
 import warnings
 warnings.filterwarnings("ignore")
