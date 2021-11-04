@@ -35,10 +35,10 @@ class CFG:
     metric = Accuracy().torch
     # metric = AUC().torch
 
-    print_freq=1000
-    num_workers=4
-    epochs=200
-    batch_size=256
+    print_freq = 1000
+    num_workers = 4
+    epochs = 200
+    batch_size = 256
     apex = True
     parallel = None
     deterministic = False
