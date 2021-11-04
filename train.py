@@ -4,13 +4,14 @@ import argparse
 from pathlib import Path
 from pprint import pprint
 import gc
+from tqdm import tqdm
+
 import torch
 import torch.utils.data as D
 from pytorch_lightning import Trainer, seed_everything
+
 import warnings
 warnings.filterwarnings("ignore")
-from copy import deepcopy
-from tqdm import tqdm
 
 import preprocess
 from metrics import Accuracy, AUC

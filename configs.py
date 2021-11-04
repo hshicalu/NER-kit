@@ -11,22 +11,19 @@ class CFG:
     name = 'NER'
     seed = 2021
     dataset = ["Dummy code"]
-    dataset_params = dict()
     tokenizer = BertJapaneseTokenizer.from_pretrained
     tokenizer_params = dict(
-        pretrained_model_name_or_path=\
-           'cl-tohoku/bert-base-japanese-whole-word-masking',
+        'cl-tohoku/bert-base-japanese-whole-word-masking',
     )
     model = BertForTokenClassification.from_pretrained
     model_params = dict(
-        pretrained_model_name_or_path=\
-           'cl-tohoku/bert-base-japanese-whole-word-masking',
-        num_labels=["Dummy code"]+1, # add padding [PAD]
+        'cl-tohoku/bert-base-japanese-whole-word-masking',
+        num_labels=["Dummy code"]+1,
         output_attentions=False,
         output_hidden_states=False
     )
     finetune = True
-    max_sentence_length = 64
+    max_length = 64
     scheduler = 'ReduceLROnPlateau' # ['CosineAnnealingWarmRestarts', 'ReduceLROnPlateau', 'linear', 'cosine', 'CosineAnnealingLR']
     batch_scheduler = False
     lr = 1e-3
@@ -34,9 +31,9 @@ class CFG:
     weight_decay = 1e-6
     optimizer = optim.Adam
     optimizer_params = dict()
-    criterion = nn.BCEWithLogitsLoss() # dummy loss function
-    eval_metric = Accuracy().torch
-    # eval_metric = AUC().torch
+    criterion = nn.BCEWithLogitsLoss()
+    metric = Accuracy().torch
+    # metric = AUC().torch
 
     print_freq=1000
     num_workers=4

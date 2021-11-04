@@ -11,13 +11,9 @@ import torch
 import torch.utils.data as D
 from transformers import BertJapaneseTokenizer
 
-
-MAX_LEN = 128
-PAD_ID = 0
-PAD_TAG = '[PAD]'
-
 class Preprocess():
     def __init__(self):
-      self.dummy = dummy
+      self.dummy = None
     def preprocess(self):
       return None
+      
